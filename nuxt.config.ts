@@ -14,7 +14,13 @@ export default defineNuxtConfig({
        
     }
   },
- 
+  components: {
+    global: true,
+    dirs: ['~/components'],
+  },
+
+
+  
   devtools: { enabled: true },
   'imports':{
       "dirs":['stores']

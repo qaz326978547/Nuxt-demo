@@ -1,13 +1,11 @@
-<script lang="ts" setup></script>
 
 <template>
   <div>
     <header class=" flex">
-      <nuxt-link active-class="bg-black text-white" class=" px-6 text-blue-600" to="/">Home</nuxt-link>
-      <nuxt-link active-class="bg-black text-white" class=" px-6 text-blue-600" to="/about">About</nuxt-link>
-      <nuxt-link active-class="bg-black text-white" class=" px-6 text-blue-600" to="/user">User</nuxt-link>
-      <nuxt-link active-class="bg-black text-white" target="_blank" class=" px-6 text-blue-600 "
-        to="/useAsyncData">useAsyncData</nuxt-link>
+      <nuxt-link v-for="route in routeList" active-class="bg-black text-white" class=" px-6 text-blue-600"
+        :to="route.path">
+        {{ route.name }}
+      </nuxt-link>
     </header>
     <slot />
 
@@ -16,5 +14,18 @@
     </footer>
   </div>
 </template>
+<script lang="ts" setup>
+
+const routeList = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'User', path: '/user' },
+  { name: 'useAsyncData', path: '/useAsyncData' },
+  { name: 'product', path: '/product' },
+  { name: 'course', path: '/courses' }
+]
+
+
+</script>
 
 <style scoped></style>

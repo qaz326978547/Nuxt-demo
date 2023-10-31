@@ -2,5 +2,8 @@
     "cSpell.words": [
         "Nuxt"
     ],
+    //設定.vue 與 .ts 檔案儲存後自動格式化 且 tab 改為 2 個空格
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
 
 }
